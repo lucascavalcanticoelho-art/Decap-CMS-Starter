@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": "p001",
+      "name": "Botox 50U + kit Toxina",
+      "marca": "Allergan Aesthetics",
+      "categoria": "Toxinas",
+      "preco_pix": 449.0,
+      "preco_cartao": 115.62,
+      "parcelas": "4x",
+      "oferta": true,
+      "descricao": "Toxina botulínica 50U com kit."
+    },
+    {
+      "id": "p002",
+      "name": "Botulim 200U + kit Toxina",
+      "marca": "Blau Farmacêutica",
+      "categoria": "Toxinas",
+      "preco_pix": 949.0,
+      "preco_cartao": 244.37,
+      "parcelas": "4x",
+      "oferta": false,
+      "descricao": "Kit completo 200U."
+    },
+    {
+      "id": "p003",
+      "name": "Skinbooster 1ml",
+      "marca": "Rennova",
+      "categoria": "Preenchedores",
+      "preco_pix": 349.0,
+      "preco_cartao": 89.87,
+      "parcelas": "4x",
+      "oferta": true,
+      "descricao": "Hidratação injetável."
+    }
+  ]
+}

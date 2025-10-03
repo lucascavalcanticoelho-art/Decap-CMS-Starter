@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="container header">
+    <div class="brand">
+      <div class="logo">LOGO</div>
+      <div>
+        <h1>Catálogo Digital</h1>
+        <p class="muted">Somente orçamento — sem checkout</p>
+      </div>
+    </div>
+
+    <div class="searchbar">
+      <input id="q" type="search" placeholder="Buscar produtos...">
+      <select id="cat"><option value="">Todas as categorias</option></select>
+      <select id="brand"><option value="">Todas as marcas</option></select>
+      <select id="sort">
+        <option value="az">Nome A–Z</option>
+        <option value="za">Nome Z–A</option>
+        <option value="pix-asc">PIX menor → maior</option>
+        <option value="pix-desc">PIX maior → menor</option>
+      </select>
+      <label class="checkbox">
+        <input id="onlyOffers" type="checkbox"> Só ofertas
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="results" class="grid"></section>
+  </main>
+
+  <button id="cartBtn" class="cart-fab">🛒<span id="cartCount">0</span></button>
+
+  <div id="cartModal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Orçamento</h3>
+        <button id="closeCart" class="icon">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="totals">
+        <div><strong>Total PIX:</strong> <span id="totalPix">R$ 0,00</span></div>
+        <div><strong>Total Cartão:</strong> <span id="totalCard">R$ 0,00</span></div>
+      </div>
+      <div class="actions">
+        <a id="waBtn" class="btn">WhatsApp</a>
+        <button id="copyBtn" class="btn">Copiar</button>
+        <a id="emailBtn" class="btn">Email</a>
+        <button id="pdfBtn" class="btn danger">PDF</button>
+      </div>
+      <p class="hint">💡 Este carrinho serve apenas como orçamento. O pedido é concluído pelo WhatsApp.</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

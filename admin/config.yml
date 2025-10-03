@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+local_backend: true
+
+collections:
+  - name: "catalogo"
+    label: "Catálogo"
+    files:
+      - name: "produtos"
+        label: "Produtos"
+        file: "data/products.json"
+        format: "json"
+        fields:
+          - label: "Itens"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.marca}}"
+            fields:
+              - { label: "ID", name: "id", widget: "string", hint: "Código único (ex.: p001)" }
+              - { label: "Nome", name: "name", widget: "string" }
+              - { label: "Categoria", name: "categoria", widget: "string" }
+              - { label: "Marca", name: "marca", widget: "string", required: false }
+              - { label: "Preço PIX (R$)", name: "preco_pix", widget: "number", value_type: "float", step: 0.01 }
+              - { label: "Preço Cartão (R$)", name: "preco_cartao", widget: "number", value_type: "float", step: 0.01 }
+              - { label: "Parcelas (ex.: 4x)", name: "parcelas", widget: "string", required: false }
+              - { label: "Oferta?", name: "oferta", widget: "boolean", default: false, required: false }
+              - { label: "Descrição", name: "descricao", widget: "text", required: false }
