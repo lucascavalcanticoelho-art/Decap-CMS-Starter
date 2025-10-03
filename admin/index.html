@@ -1,12 +1,32 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>CMS</title>
   </head>
   <body>
-    <!-- Carrega o Decap CMS -->
+    <!-- Widget do Identity: necessário para aceitar convite e autenticar -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <script>
+      (function () {
+        // Se chegar com #invite_token=..., aceita o convite e volta para /admin
+        if (location.hash && location.hash.includes('invite_token=')) {
+          const token = location.hash.split('invite_token=')[1];
+          if (token && window.netlifyIdentity) {
+            window.netlifyIdentity.acceptInvite(token, true)
+              .then(() => location.replace('/admin/'))
+              .catch(err => {
+                console.error('Invite error', err);
+                alert('Falha ao confirmar o convite.');
+              });
+          }
+        }
+      })();
+    </script>
+
+    <!-- Decap CMS (somente no /admin) -->
     <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </body>
 </html>
