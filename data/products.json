@@ -1,37 +1,38 @@
 {
   "items": [
     {
-      "id": "p001",
+      "descricao": "Toxina botulínica 50U com kit.",
       "name": "Botox 50U + kit Toxina",
+      "preco_pix": 449,
+      "oferta": true,
+      "imagem": "/uploads/apresentação-azul-moderna-relatório-financeiro.jpg",
+      "categoria": "Toxinas",
+      "id": "p001",
+      "parcelas": "4x",
       "marca": "Allergan Aesthetics",
-      "categoria": "Toxinas",
-      "preco_pix": 449.0,
-      "preco_cartao": 115.62,
-      "parcelas": "4x",
-      "oferta": true,
-      "descricao": "Toxina botulínica 50U com kit."
+      "preco_cartao": 115.62
     },
     {
-      "id": "p002",
+      "descricao": "Kit completo 200U.",
       "name": "Botulim 200U + kit Toxina",
-      "marca": "Blau Farmacêutica",
-      "categoria": "Toxinas",
-      "preco_pix": 949.0,
-      "preco_cartao": 244.37,
-      "parcelas": "4x",
+      "preco_pix": 949,
       "oferta": false,
-      "descricao": "Kit completo 200U."
+      "categoria": "Toxinas",
+      "id": "p002",
+      "parcelas": "4x",
+      "marca": "Blau Farmacêutica",
+      "preco_cartao": 244.37
     },
     {
-      "id": "p003",
+      "descricao": "Hidratação injetável.",
       "name": "Skinbooster 1ml",
-      "marca": "Rennova",
-      "categoria": "Preenchedores",
-      "preco_pix": 349.0,
-      "preco_cartao": 89.87,
-      "parcelas": "4x",
+      "preco_pix": 349,
       "oferta": true,
-      "descricao": "Hidratação injetável."
+      "categoria": "Preenchedores",
+      "id": "p003",
+      "parcelas": "4x",
+      "marca": "Rennova",
+      "preco_cartao": 89.87
     }
   ]
 }
