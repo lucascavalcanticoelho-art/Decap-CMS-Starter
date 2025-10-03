@@ -5,17 +5,30 @@ const state = {
   cart: JSON.parse(localStorage.getItem('catalog-cart') || '[]'),
 };
 
-const money = (n) => n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const money = (n) => Number(n || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const el = (id) => document.getElementById(id);
 
+// -------------- Cart --------------
 function syncCart() {
   localStorage.setItem('catalog-cart', JSON.stringify(state.cart));
-  document.getElementById('cartCount').textContent = state.cart.reduce((s,i)=>s+i.qty,0);
+  el('cartCount').textContent = state.cart.reduce((s, i) => s + i.qty, 0);
 }
 
 function addToCart(prod) {
   const idx = state.cart.findIndex(i => i.id === prod.id);
-  if (idx >= 0) { state.cart[idx].qty += 1; }
-  else { state.cart.push({ id: prod.id, name: prod.name, pix: prod.preco_pix, card: prod.preco_cartao, brand: prod.marca, qty: 1 }); }
+  if (idx >= 0) {
+    state.cart[idx].qty += 1;
+  } else {
+    state.cart.push({
+      id: prod.id,
+      name: prod.name,
+      pix: Number(prod.preco_pix || 0),
+      card: Number(prod.preco_cartao || 0),
+      brand: prod.marca,
+      parcelas: prod.parcelas || '',
+      qty: 1
+    });
+  }
   syncCart();
 }
 
@@ -34,78 +47,73 @@ function changeQty(id, delta) {
 }
 
 function renderCart() {
-  const el = document.getElementById('cartItems');
-  el.innerHTML = '';
+  const wrap = el('cartItems');
+  wrap.innerHTML = '';
   let totalPix = 0, totalCard = 0;
+
   state.cart.forEach(item => {
-    totalPix += item.pix * item.qty;
-    totalCard += item.card * item.qty;
+    totalPix += Number(item.pix) * item.qty;
+    totalCard += Number(item.card) * item.qty;
     const row = document.createElement('div');
     row.className = 'cart-item';
-    row.innerHTML = \`
+    row.innerHTML = `
       <div>
-        <strong>\${item.name}</strong><div class="muted">\${item.brand || ''}</div>
+        <strong>${item.name}</strong><div class="muted">${item.brand || ''}</div>
       </div>
-      <div>\${money(item.pix)} (PIX)</div>
+      <div>${money(item.pix)} (PIX)</div>
       <div class="qty">
-        <button onclick="changeQty('\${item.id}',-1)">-</button>
-        <span>\${item.qty}</span>
-        <button onclick="changeQty('\${item.id}',1)">+</button>
+        <button onclick="changeQty('${item.id}',-1)">-</button>
+        <span>${item.qty}</span>
+        <button onclick="changeQty('${item.id}',1)">+</button>
       </div>
-      <button class="icon" onclick="removeFromCart('\${item.id}')">✕</button>
-    \`;
-    el.appendChild(row);
+      <button class="icon" onclick="removeFromCart('${item.id}')">✕</button>
+    `;
+    wrap.appendChild(row);
   });
-  document.getElementById('totalPix').textContent = money(totalPix);
-  document.getElementById('totalCard').textContent = money(totalCard);
 
-  // Share actions
-  const lines = state.cart.map(i => \`• \${i.name} — PIX: \${money(i.pix)} | Cartão: \${money(i.card)} × \${i.qty}\`);
-  const msg = \`Orçamento:\n\${lines.join('\n')}\n\nTotal PIX: \${money(totalPix)}\nTotal Cartão: \${money(totalCard)}\`;
-  document.getElementById('waBtn').href = 'https://wa.me/?text=' + encodeURIComponent(msg);
-  document.getElementById('emailBtn').href = 'mailto:?subject=Orçamento&body=' + encodeURIComponent(msg);
-  document.getElementById('copyBtn').onclick = async () => {
-    await navigator.clipboard.writeText(msg);
-    alert('Orçamento copiado!');
-  };
-  document.getElementById('pdfBtn').onclick = async () => {
+  el('totalPix').textContent = money(totalPix);
+  el('totalCard').textContent = money(totalCard);
+
+  const lines = state.cart.map(i => `• ${i.name} — PIX: ${money(i.pix)} | Cartão: ${money(i.card)} ${i.parcelas ? '('+i.parcelas+') ' : ''}× ${i.qty}`);
+  const msg = `Orçamento:\n${lines.join('\n')}\n\nTotal PIX: ${money(totalPix)}\nTotal Cartão: ${money(totalCard)}`;
+
+  el('waBtn').href   = 'https://wa.me/?text=' + encodeURIComponent(msg);
+  el('emailBtn').href = 'mailto:?subject=Orçamento&body=' + encodeURIComponent(msg);
+  el('copyBtn').onclick = async () => { await navigator.clipboard.writeText(msg); alert('Orçamento copiado!'); };
+
+  el('pdfBtn').onclick = async () => {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
-    doc.setFontSize(14);
-    doc.text('Orçamento', 14, 16);
-    doc.setFontSize(11);
-    let y = 26;
-    lines.forEach(line => { 
-      doc.text(line, 14, y); 
-      y += 8; 
-      if (y > 270) { doc.addPage(); y = 20; }
-    });
-    y += 8;
-    doc.text('Total PIX: ' + \`\${money(totalPix)}\`, 14, y); y += 8;
-    doc.text('Total Cartão: ' + \`\${money(totalCard)}\`, 14, y);
+    doc.setFontSize(14); doc.text('Orçamento', 14, 16);
+    doc.setFontSize(11); let y = 26;
+    lines.forEach(line => { doc.text(line, 14, y); y += 8; if (y > 270) { doc.addPage(); y = 20; } });
+    y += 8; doc.text('Total PIX: ' + money(totalPix), 14, y);
+    y += 8; doc.text('Total Cartão: ' + money(totalCard), 14, y);
     doc.save('orcamento.pdf');
   };
 }
 
+// -------------- Listagem --------------
 function renderProducts() {
-  const box = document.getElementById('results');
+  const box = el('results');
   box.innerHTML = '';
   state.filtered.forEach(p => {
     const card = document.createElement('div');
     card.className = 'card';
-    card.innerHTML = \`
-      <div class="brand-line">\${p.marca || ''}</div>
-      <h4>\${p.name}</h4>
-      \${p.oferta ? '<span class="tag">Oferta</span>' : ''}
+    card.innerHTML = `
+      ${p.imagem ? `<img class="thumb" src="${p.imagem}" alt="${p.name}">` : ''}
+      <div class="brand-line">${p.marca || ''}</div>
+      <h4>${p.name}</h4>
+      ${p.oferta ? '<span class="tag">Oferta</span>' : ''}
       <div class="price">
-        <div class="pix"><strong>PIX</strong> — \${money(p.preco_pix)}</div>
-        <div class="card"><strong>Cartão</strong> — \${money(p.preco_cartao)} \${p.parcelas ? ' ('+p.parcelas+')' : ''}</div>
+        <div class="pix"><strong>PIX</strong> — ${money(p.preco_pix)}</div>
+        <div class="card"><strong>Cartão</strong> — ${money(p.preco_cartao)} ${p.parcelas ? ' ('+p.parcelas+')' : ''}</div>
       </div>
       <div class="add">
         <button class="btn">Adicionar</button>
         <button class="icon-btn" title="Favorito">♡</button>
       </div>
-    \`;
+    `;
     card.querySelector('.btn').addEventListener('click', () => addToCart(p));
     box.appendChild(card);
   });
@@ -114,34 +122,44 @@ function renderProducts() {
 function populateFilters() {
   const cats = Array.from(new Set(state.products.map(p => p.categoria).filter(Boolean))).sort();
   const brands = Array.from(new Set(state.products.map(p => p.marca).filter(Boolean))).sort();
-  const catSel = document.getElementById('cat');
-  const brandSel = document.getElementById('brand');
+  const catSel = el('cat'), brandSel = el('brand');
   cats.forEach(c => { const o = document.createElement('option'); o.value = c; o.textContent = c; catSel.appendChild(o); });
   brands.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; brandSel.appendChild(o); });
 }
 
 function applyFilters() {
-  const q = document.getElementById('q').value.trim();
-  const cat = document.getElementById('cat').value;
-  const brand = document.getElementById('brand').value;
-  const onlyOffers = document.getElementById('onlyOffers').checked;
-  const sort = document.getElementById('sort').value;
+  const q = el('q').value.trim();
+  const cat = el('cat').value;
+  const brand = el('brand').value;
+  const onlyOffers = el('onlyOffers').checked;
+  const sort = el('sort').value;
 
   let list = [...state.products];
   if (cat) list = list.filter(p => p.categoria === cat);
   if (brand) list = list.filter(p => p.marca === brand);
-  if (onlyOffers) list = list.filter(p => p.oferta);
+  if (onlyOffers) list = list.filter(p => !!p.oferta);
 
+  // Busca: usa Fuse se estiver disponível; senão, fallback simples
   if (q) {
-    const fuse = new Fuse(list, { keys: ['name','marca','categoria','descricao'], threshold: 0.3 });
-    list = fuse.search(q).map(r => r.item);
+    if (window.Fuse) {
+      const fuse = new Fuse(list, { keys: ['name','marca','categoria','descricao'], threshold: 0.3 });
+      list = fuse.search(q).map(r => r.item);
+    } else {
+      const needle = q.toLowerCase();
+      list = list.filter(p =>
+        (p.name || '').toLowerCase().includes(needle) ||
+        (p.marca || '').toLowerCase().includes(needle) ||
+        (p.categoria || '').toLowerCase().includes(needle) ||
+        (p.descricao || '').toLowerCase().includes(needle)
+      );
+    }
   }
 
   list.sort((a,b)=>{
-    if (sort === 'az') return a.name.localeCompare(b.name);
-    if (sort === 'za') return b.name.localeCompare(a.name);
-    if (sort === 'pix-asc') return a.preco_pix - b.preco_pix;
-    if (sort === 'pix-desc') return b.preco_pix - a.preco_pix;
+    if (sort === 'az') return (a.name||'').localeCompare(b.name||'');
+    if (sort === 'za') return (b.name||'').localeCompare(a.name||'');
+    if (sort === 'pix-asc') return Number(a.preco_pix) - Number(b.preco_pix);
+    if (sort === 'pix-desc') return Number(b.preco_pix) - Number(a.preco_pix);
     return 0;
   });
 
@@ -149,33 +167,46 @@ function applyFilters() {
   renderProducts();
 }
 
+// -------------- Load --------------
 async function load() {
   try {
-    const res = await fetch('data/products.json', { cache: 'no-store' });
+    const res = await fetch('/data/products.json?v=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
-    // normalize and id
-    state.products = (data.items || []).map((p, i) => ({ id: p.id || String(i+1), ...p }));
+
+    // usa data.items e normaliza tipos
+    state.products = (data.items || []).map((p, i) => ({
+      id: p.id || String(i+1),
+      name: p.name || '',
+      categoria: p.categoria || '',
+      marca: p.marca || '',
+      preco_pix: Number(p.preco_pix || 0),
+      preco_cartao: Number(p.preco_cartao || 0),
+      parcelas: p.parcelas || '',
+      oferta: !!p.oferta,
+      descricao: p.descricao || '',
+      imagem: p.imagem || ''
+    }));
+
+    console.log('Produtos carregados:', state.products);
+
     populateFilters();
     applyFilters();
     syncCart();
   } catch (e) {
-    document.getElementById('results').innerHTML = '<p>Erro ao carregar produtos. Verifique <code>data/products.json</code>.</p>';
-    console.error(e);
+    console.error('Erro ao carregar /data/products.json', e);
+    el('results').innerHTML = '<p>Erro ao carregar produtos. Verifique <code>/data/products.json</code>.</p>';
   }
 }
 
-document.getElementById('q').addEventListener('input', applyFilters);
-document.getElementById('cat').addEventListener('change', applyFilters);
-document.getElementById('brand').addEventListener('change', applyFilters);
-document.getElementById('sort').addEventListener('change', applyFilters);
-document.getElementById('onlyOffers').addEventListener('change', applyFilters);
+// -------------- Listeners --------------
+['q','cat','brand','sort','onlyOffers'].forEach(id => {
+  const n = el(id);
+  if (!n) return;
+  n.addEventListener(id === 'q' ? 'input' : 'change', applyFilters);
+});
 
-document.getElementById('cartBtn').addEventListener('click', ()=>{
-  document.getElementById('cartModal').classList.remove('hidden');
-  renderCart();
-});
-document.getElementById('closeCart').addEventListener('click', ()=>{
-  document.getElementById('cartModal').classList.add('hidden');
-});
+el('cartBtn').addEventListener('click', () => { el('cartModal').classList.remove('hidden'); renderCart(); });
+el('closeCart').addEventListener('click', () => el('cartModal').classList.add('hidden'));
 
 load();
