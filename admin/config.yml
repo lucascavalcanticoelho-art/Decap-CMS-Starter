@@ -24,9 +24,10 @@ collections:
               - { label: "ID", name: "id", widget: "string", hint: "Código único (ex.: p001)" }
               - { label: "Nome", name: "name", widget: "string" }
               - { label: "Categoria", name: "categoria", widget: "string" }
-              - { label: "Marca", name: "marca", widget: "string", required: false }
+              - { label: "Marca", name: "marca", widget: "string" }
               - { label: "Preço PIX (R$)", name: "preco_pix", widget: "number", value_type: "float", step: 0.01 }
               - { label: "Preço Cartão (R$)", name: "preco_cartao", widget: "number", value_type: "float", step: 0.01 }
               - { label: "Parcelas (ex.: 4x)", name: "parcelas", widget: "string", required: false }
-              - { label: "Oferta?", name: "oferta", widget: "boolean", default: false, required: false }
+              - { label: "Oferta?", name: "oferta", widget: "boolean", default: false }
               - { label: "Descrição", name: "descricao", widget: "text", required: false }
+              - { label: "Imagem", name: "imagem", widget: "image", required: false }
