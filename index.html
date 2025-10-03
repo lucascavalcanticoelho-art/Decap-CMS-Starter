@@ -1,29 +1,21 @@
 <!doctype html>
-<html>
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CMS</title>
+    <title>Catálogo Digital</title>
   </head>
   <body>
-    <!-- Widget de Identity (necessário para processar invite_token) -->
+    <h1>Catálogo Digital</h1>
+    <!-- Seu conteúdo da home aqui -->
+
+    <!-- Netlify Identity na HOME, apenas para tratar o invite_token -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
-    <!-- Se vier com #invite_token=..., aceita o convite e volta para /admin -->
     <script>
-      (function () {
-        if (window.location.hash && window.location.hash.includes('invite_token=')) {
-          var token = window.location.hash.split('invite_token=')[1];
-          if (token && window.netlifyIdentity) {
-            window.netlifyIdentity.acceptInvite(token, true)
-              .then(function () { window.location.replace('/admin/'); })
-              .catch(function (e) { console.error('Invite error', e); alert('Falha ao confirmar o convite.'); });
-          }
-        }
-      })();
+      // Se o link do convite abrir na home (/#invite_token=...), manda o hash para /admin
+      if (location.hash && location.hash.includes('invite_token=')) {
+        location.replace('/admin/' + location.hash);
+      }
     </script>
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@latest/dist/decap-cms.js"></script>
   </body>
 </html>
