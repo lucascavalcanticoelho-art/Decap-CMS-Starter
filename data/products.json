@@ -1,38 +1,59 @@
 {
   "items": [
     {
-      "descricao": "Toxina botulínica 50U com kit.",
-      "name": "Botox 50U + kit Toxina",
-      "preco_pix": 449,
-      "oferta": true,
-      "imagem": "",
-      "categoria": "Toxinas",
-      "id": "p001",
-      "parcelas": "4x",
-      "marca": "Allergan Aesthetics",
-      "preco_cartao": 115.62
+      "oferta": false,
+      "id": "2552",
+      "name": "SORO 10ml - CLORETO DE SODIO 0,9%",
+      "categoria": "Solução Injetável / Veículo",
+      "preco_pix": 1.41,
+      "preco_cartao": 1.5,
+      "marca": "DIVERSOS"
     },
     {
-      "descricao": "Kit completo 200U.",
-      "name": "Botulim 200U + kit Toxina",
-      "preco_pix": 949,
-      "oferta": true,
-      "categoria": "Toxinas",
-      "id": "p002",
-      "parcelas": "4x",
-      "marca": "Blau Farmacêutica",
-      "preco_cartao": 244.37
+      "oferta": false,
+      "id": "5282",
+      "name": "GLICOSE 75% C/ LIDOCAINA",
+      "categoria": "Solução Injetável / Veículo",
+      "marca": "VICTA",
+      "preco_pix": 13.16,
+      "preco_cartao": 14
     },
     {
-      "descricao": "Hidratação injetável.",
-      "name": "Skinbooster 1ml",
-      "preco_pix": 349,
-      "oferta": true,
-      "categoria": "Preenchedores",
-      "id": "p003",
-      "parcelas": "4x",
-      "marca": "Rennova",
-      "preco_cartao": 89.87
+      "oferta": false,
+      "id": "5301",
+      "name": "ESTRIANON 3ml",
+      "categoria": "Preenchedor",
+      "preco_pix": 440.86,
+      "preco_cartao": 469,
+      "marca": "DIVERSOS"
+    },
+    {
+      "oferta": false,
+      "id": "5464",
+      "name": "BCAA (MESCLA)",
+      "categoria": "Aminoácido / Metabolismo",
+      "marca": "VICTA",
+      "preco_pix": 37.6,
+      "preco_cartao": 40
+    },
+    {
+      "oferta": false,
+      "id": "5568",
+      "name": "TOXINA BOTULÍNICA A 100 XEOMIN",
+      "categoria": "Toxina Botulínica",
+      "marca": "XEOMIN",
+      "preco_pix": 657.06,
+      "preco_cartao": 698.99,
+      "parcelas": ""
+    },
+    {
+      "oferta": false,
+      "id": "6566",
+      "name": "MELASMA TRANEXÂMICO (MESCLA)",
+      "categoria": "Skinbooster / Clareador",
+      "marca": "VICTA",
+      "preco_pix": 47,
+      "preco_cartao": 50
     }
   ]
 }
