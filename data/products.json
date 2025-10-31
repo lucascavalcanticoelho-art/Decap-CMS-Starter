@@ -158,6 +158,169 @@
       "preco_pix": 56.4,
       "preco_cartao": 60,
       "descricao": "Composição:\n\n* Lipossomas de Ácido Desoxicólico 75mg\n* Trissilinol 10mg\n* Cafeína 100mg\n* Pentoxifilina 20mg\n* Benzopirona 5mg\n* Lidocaína 40mg\n\nIndicação:\n🔹 Mescla equilibrada para gordura localizada e edema.\nCombina ação lipolítica média com ativos circulatórios. Boa para glúteos, culote, abdômen inferior, com menor agressividade que o desoxicolato puro.\n"
+    },
+    {
+      "oferta": false,
+      "id": "7928",
+      "name": "D PANTENOL 7,5ml (SKINBOOSTER)",
+      "categoria": "Skinbooster / Hidratação",
+      "marca": "VICTA",
+      "preco_pix": 37.6,
+      "preco_cartao": 40
+    },
+    {
+      "oferta": false,
+      "id": "8053",
+      "name": "ÁGUA PARA INJEÇÃO 10ml",
+      "categoria": "Solução Injetável / Veículo",
+      "preco_pix": 1.4,
+      "preco_cartao": 1.5,
+      "marca": "Diversos"
+    },
+    {
+      "oferta": false,
+      "id": "8053",
+      "name": "RENNOVA FILL",
+      "categoria": "Preenchedor",
+      "marca": "RENNOVA ",
+      "preco_pix": 215.26,
+      "preco_cartao": 229
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA D3",
+      "id": "8092",
+      "categoria": "Vitamina / Imunidade",
+      "marca": "VICTA",
+      "preco_pix": 37.6,
+      "preco_cartao": 40
+    },
+    {
+      "oferta": false,
+      "id": "8117",
+      "name": "D PANTENOL - 2ml",
+      "categoria": "Hidratação / Regeneração",
+      "marca": "VICTA / ICT",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "8127",
+      "name": "ALOPÉCIA ANDROGENÉTICA",
+      "categoria": "Capilar / Estímulo Folicular",
+      "marca": "VICTA",
+      "preco_pix": 56.4,
+      "preco_cartao": 60
+    },
+    {
+      "oferta": false,
+      "id": "8141",
+      "name": "HIALURONIDASE",
+      "categoria": "Enzima / Degradadora AH",
+      "marca": "VICTA",
+      "preco_pix": 18.8,
+      "preco_cartao": 20
+    },
+    {
+      "oferta": false,
+      "name": "CURCUMINA 200MG/2ML",
+      "id": "10459",
+      "categoria": "Antioxidante / Anti-inflamatório",
+      "marca": "VICTA",
+      "preco_pix": 18.8,
+      "preco_cartao": 20
+    },
+    {
+      "oferta": false,
+      "name": "COMPLEXO B (SEM B1) 2ML",
+      "id": "10460",
+      "categoria": "Vitamina / Energética",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "10461",
+      "name": "METILCOBALAMINA",
+      "categoria": "Vitamina B12 / Neuroprotetora",
+      "marca": "VICTA",
+      "preco_pix": 42.3,
+      "preco_cartao": 45
+    },
+    {
+      "oferta": false,
+      "id": "10463",
+      "name": "ZINCO 20MG/2ML",
+      "categoria": "Mineral / Imunidade",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA C 444MG/2ML",
+      "id": "10467",
+      "categoria": "Vitamina / Antioxidante",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "10468",
+      "name": "BOOSTER FITNESS",
+      "categoria": "Energético / Performance",
+      "marca": "VICTA",
+      "preco_pix": 61.1,
+      "preco_cartao": 65,
+      "descricao": "BOOSTER MITOCONDRIAL (REDUÇÃO GORDURA VISCERAL)\n\nMORUSIL 40MG/ INOSITOL//100MG/ L-CARNITINA 300MG/ CAFEINA 120MG/ FUROSEMIDA 5MG/LIDOCAINA 20MG/VEÍCULO QSP 5ML"
+    },
+    {
+      "oferta": false,
+      "name": "ÁCIDO GAMA AMINOBUTÍRICO (GABA)",
+      "id": "10492",
+      "categoria": "Relaxante / Neuromodulador",
+      "marca": "VICTA",
+      "preco_pix": 18.79,
+      "preco_cartao": 19.99
+    },
+    {
+      "oferta": false,
+      "name": "SELÊNIO",
+      "id": "10493",
+      "categoria": "Mineral / Antioxidante",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "10507",
+      "name": "DMAE 2ml",
+      "categoria": "Antioxidante / Firmeza",
+      "marca": "VICTA",
+      "preco_pix": 20.67,
+      "preco_cartao": 21.99
+    },
+    {
+      "oferta": false,
+      "name": "PQQ 2ML",
+      "id": "10508",
+      "marca": "VICTA",
+      "categoria": "Antioxidante / Mitocondrial",
+      "preco_pix": 23.49,
+      "preco_cartao": 25
+    },
+    {
+      "oferta": false,
+      "name": "ÁCIDO TRANEXÂMICO 2ML",
+      "id": "10509",
+      "categoria": "Clareador / Antiinflamatório",
+      "marca": "VICTA",
+      "preco_pix": 18.7,
+      "preco_cartao": 19.9
     }
   ]
 }
