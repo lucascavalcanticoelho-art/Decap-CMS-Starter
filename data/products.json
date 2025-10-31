@@ -402,6 +402,78 @@
       "marca": "VICTA",
       "preco_pix": 28.2,
       "preco_cartao": 30
+    },
+    {
+      "oferta": false,
+      "name": "GLICOSE 75% (S/ LIDOCAINA)",
+      "id": "10607",
+      "categoria": "Solução Injetável / Veículo",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "Rennova - Elleva 150 mg",
+      "categoria": "Preenchedor",
+      "marca": "RENNOVA",
+      "id": "10622",
+      "preco_pix": 649,
+      "preco_cartao": 699
+    },
+    {
+      "oferta": false,
+      "name": "Rennova - Elleva 210mg",
+      "id": "10623",
+      "categoria": "Preenchedor",
+      "marca": "RENNOVA",
+      "preco_pix": 849,
+      "preco_cartao": 899
+    },
+    {
+      "oferta": false,
+      "id": "10660",
+      "name": "ÁCIDO ALFA LIPOICO 600MG/30ML",
+      "categoria": "Antioxidante / Detox Celular",
+      "marca": "VICTA",
+      "preco_pix": 61.1,
+      "preco_cartao": 65
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA B1 (TIAMINA) 100MG 1ML",
+      "id": "10661",
+      "categoria": "Vitamina / Energética",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "CAFEÍNA 100MG/2ML",
+      "id": "10662",
+      "categoria": "Termogênico / Energético",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "L-CARNITINA 600MG/2ML",
+      "id": "10663",
+      "categoria": "Liporedutor / Energético",
+      "marca": "VICTA",
+      "preco_pix": 12.21,
+      "preco_cartao": 12.99
+    },
+    {
+      "oferta": false,
+      "name": "L-GLUTATION 100MG/2ML",
+      "id": "10664",
+      "categoria": "Antioxidante / Detox",
+      "marca": "VICTA",
+      "preco_pix": 19.74,
+      "preco_cartao": 21
     }
   ]
 }
