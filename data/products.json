@@ -54,6 +54,70 @@
       "marca": "VICTA",
       "preco_pix": 47,
       "preco_cartao": 50
+    },
+    {
+      "oferta": false,
+      "id": "7016",
+      "name": "MAGNÉSIO 400mg/ 1ml",
+      "categoria": "Suplemento",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "7171",
+      "name": "MOROSIL 2ML",
+      "categoria": "Liporedutor / Antioxidante",
+      "marca": "VICTA",
+      "preco_pix": 37.6,
+      "preco_cartao": 40
+    },
+    {
+      "oferta": false,
+      "id": "7284",
+      "categoria": "7284",
+      "name": "TOXINA BOTULÍNICA A 100U NABOTA",
+      "marca": "Toxina Botulínica",
+      "preco_pix": 798,
+      "preco_cartao": 849
+    },
+    {
+      "oferta": false,
+      "id": "7539",
+      "name": "Q10",
+      "categoria": "Antioxidante / Revitalizante",
+      "marca": "R$ 46,91",
+      "preco_pix": 46.91,
+      "preco_cartao": 49.9
+    },
+    {
+      "oferta": false,
+      "id": "7588",
+      "name": "BIOTINA",
+      "categoria": "Vitamina / Capilar",
+      "marca": "VICTA / ICT",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "id": "7849",
+      "name": "DMAE 7% + N-ACETILGLUCOSAMINA 2ML (SKINBOOSTER)",
+      "categoria": "Skinbooster / Firmeza",
+      "marca": "VICTA",
+      "preco_pix": 37.6,
+      "preco_cartao": 40
+    },
+    {
+      "oferta": false,
+      "id": "7878",
+      "name": "ENZIMA N1",
+      "categoria": "Enzima / Liporedutora",
+      "marca": "VICTA",
+      "preco_pix": 56.4,
+      "preco_cartao": 60,
+      "descricao": "Composição:\n\n* Desoxicolato de Sódio 150mg\n* Cafeína 100mg\n* Trissilinol 10mg\n* Pentoxifilina 20mg\n* Benzopirona 5mg\n* Lidocaína 40mg\n"
     }
   ]
 }
