@@ -76,9 +76,9 @@
     {
       "oferta": false,
       "id": "7284",
-      "categoria": "7284",
+      "categoria": "Toxina Botulínica",
       "name": "TOXINA BOTULÍNICA A 100U NABOTA",
-      "marca": "Toxina Botulínica",
+      "marca": "NABOTA",
       "preco_pix": 798,
       "preco_cartao": 849
     },
@@ -117,7 +117,27 @@
       "marca": "VICTA",
       "preco_pix": 56.4,
       "preco_cartao": 60,
-      "descricao": "Composição:\n\n* Desoxicolato de Sódio 150mg\n* Cafeína 100mg\n* Trissilinol 10mg\n* Pentoxifilina 20mg\n* Benzopirona 5mg\n* Lidocaína 40mg\n"
+      "descricao": "Composição:\n\n* Desoxicolato de Sódio 150mg\n* Cafeína 100mg\n* Trissilinol 10mg\n* Pentoxifilina 20mg\n* Benzopirona 5mg\n* Lidocaína 40mg\n\nIndicação:\n🔹 Redução de gordura localizada + ação lipolítica com drenagem.\nEssa mescla combina ativos lipolíticos potentes (desoxicolato, cafeína), com ativos venotônicos e drenantes (benzopirona, pentoxifilina), ideal para regiões com gordura associada a edema.\n"
+    },
+    {
+      "oferta": false,
+      "name": "ENZIMA VICTA n2 10ml",
+      "id": "2533",
+      "categoria": "Enzima / Liporedutora",
+      "marca": "VICTA",
+      "preco_pix": 56.4,
+      "preco_cartao": 60,
+      "descricao": "Composição:\n\n* Lipossomas de Desoxicolato de Sódio 100mg\n* Trissilinol 10mg\n* Benzopirona 10mg\n* Lidocaína 20mg\n\nIndicação:\n🔹 Lipólise localizada com menor agressividade.\nO uso de lipossomas suaviza a ação do desoxicolato, sendo uma boa opção para áreas mais sensíveis (papada, culote), com menor risco de inflamação.\n"
+    },
+    {
+      "oferta": false,
+      "id": "7880",
+      "categoria": "Enzima / Liporedutora",
+      "name": "ENZIMA VICTA n3 10ml",
+      "marca": "VICTA",
+      "preco_pix": 56.4,
+      "preco_cartao": 60,
+      "descricao": "Composição:\n\n* Desoxicolato de Sódio 6%\n* Veículo QSP 10mL\n\nIndicação:\n🔹 Lipólise pura e agressiva.\nConcentração alta (6%), sem ativos drenantes ou anestésicos. Ideal para profissionais experientes, com uso **restrito a áreas com gordura resistente, como abdômen e flancos. Deve ser usado com cautela."
     }
   ]
 }
