@@ -321,6 +321,87 @@
       "marca": "VICTA",
       "preco_pix": 18.7,
       "preco_cartao": 19.9
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA A",
+      "id": "10510",
+      "categoria": "Vitamina / Regeneradora",
+      "marca": "VICTA",
+      "preco_pix": 11.19,
+      "preco_cartao": 12
+    },
+    {
+      "oferta": false,
+      "id": "10511",
+      "name": "VITAMINA E",
+      "categoria": "Vitamina / Antioxidante",
+      "marca": "VICTA",
+      "preco_pix": 11.27,
+      "preco_cartao": 11.99
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA B3",
+      "categoria": "Vitamina / Revitalizante",
+      "id": "10512",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA B6",
+      "id": "10513",
+      "categoria": "Vitamina / Energética",
+      "marca": "VICTA",
+      "preco_pix": 9.4,
+      "preco_cartao": 10
+    },
+    {
+      "oferta": false,
+      "name": "VITAMINA B2",
+      "id": "10515",
+      "categoria": "Vitamina / Energética",
+      "marca": "VICTA",
+      "preco_pix": 14.1,
+      "preco_cartao": 15
+    },
+    {
+      "oferta": false,
+      "id": "10516",
+      "name": "ADEK 2ml (ampola)",
+      "categoria": "Complexo de Vitaminas Lipossolúveis",
+      "marca": "VICTA",
+      "preco_pix": 84.51,
+      "preco_cartao": 89.9
+    },
+    {
+      "oferta": false,
+      "id": "10518",
+      "name": "Nutriex - Hidroxiapatita 350mg",
+      "categoria": "Bioestimulador / Estrutural",
+      "marca": "NUTRIEX",
+      "preco_pix": 422.06,
+      "preco_cartao": 449
+    },
+    {
+      "oferta": false,
+      "name": "RENNOVA ULTRA VOLUME LIDO 2ML",
+      "id": "10519",
+      "categoria": "Preenchedor",
+      "marca": "RENNOVA",
+      "preco_pix": 517,
+      "preco_cartao": 550
+    },
+    {
+      "oferta": false,
+      "name": "METILFOLATO",
+      "id": "10534",
+      "categoria": "Vitamina / Neuroprotetora",
+      "marca": "VICTA",
+      "preco_pix": 28.2,
+      "preco_cartao": 30
     }
   ]
 }
